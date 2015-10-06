@@ -1,0 +1,17 @@
+{
+  "name": "flancer32/sample_mage1_module",
+  "description": "Sample module to use common library in Magento 1 app.",
+  "type": "magento-module",
+  "homepage": "https://github.com/flancer32/sample_mage1_module",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Gusev",
+      "email": "alex@flancer64.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "flancer32/sample_magelib_demo": "dev-master"
+  }
+}
