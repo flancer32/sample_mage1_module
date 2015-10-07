@@ -8,6 +8,15 @@
         "post-status-cmd"
       ],
       "rewrite": true
+    },
+    "bin/deploy/post_install.sql": {
+      "src": "cfg/bin/deploy/post_install.sql",
+      "dst": "bin/deploy/post_install.sql",
+      "events": [
+        "post-install-cmd",
+        "post-status-cmd"
+      ],
+      "rewrite": true
     }
   }
 }

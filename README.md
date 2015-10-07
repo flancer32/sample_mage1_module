@@ -48,10 +48,18 @@ Clone repo from github:
       }
     }
     
-... then run composer and Magento install:  
+... then run composer, link modules to `./work/htdocs/` and install Magento DB:  
     
     $ composer install
     $ sh  ./bin/deploy/post_install.sh
+
+
+
+
+## Magento modules redeployment
+
+    $ composer run-script post-install-cmd -vvv -- --redeploy
+
 
 
 
@@ -60,13 +68,13 @@ Clone repo from github:
 Point your web-server to folder `$LOCAL_ROOT/work/htdocs`. This is sample for the Apache2 web server:
 
     <VirtualHost *:80>
-      DocumentRoot /home/magento/instance/sample_mage2_module/work/htdocs/
+      DocumentRoot /home/magento/instance/sample_mage1_module/work/htdocs/
       DirectoryIndex index.php
     
-      ServerName mage2.local.host.com
+      ServerName mage1.local.host.com
       ServerAdmin support@local.host.com
     
-      <Directory /home/magento/instance/sample_mage2_module/work/htdocs>
+      <Directory /home/magento/instance/sample_mage1_module/work/htdocs>
         Options -Indexes +FollowSymLinks +MultiViews
         Require all granted
         AllowOverride All
@@ -76,32 +84,7 @@ Point your web-server to folder `$LOCAL_ROOT/work/htdocs`. This is sample for th
       </Directory>
     
       LogLevel debug
-      ErrorLog /var/log/httpd/mage2_error.log
-      CustomLog /var/log/httpd/mage2_access.log combined
+      ErrorLog /var/log/httpd/mage1_error.log
+      CustomLog /var/log/httpd/mage1_access.log combined
     </VirtualHost>
 
-
-
-    
-## Module's Source Linking
-
-Module sources are in `./work/vendor/flancer32/sample_mage2_module/src`:  
-
-![Symlink target mount point][symlink_to]
-
-... but mounted into Magento 2 application structure using symlinks: 
-
-![Symlink source mount point][symlink_from]
-
-You should change files in `./work/htdocs/app/code/Flancer32` folder
- (linked to `./work/vendor/flancer32/sample_mage2_module/src`), not in `./src` folder itself. 
-
-Commit changes from `./work/vendor/flancer32/sample_mage2_module/src` to git:
-
-![Commit from vendor to git repo][git_commit]
-
-
-
-[symlink_from]: ./docs/img/symlink_from.png
-[symlink_to]: ./docs/img/symlink_to.png
-[git_commit]: ./docs/img/git_commit.png

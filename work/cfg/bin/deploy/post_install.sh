@@ -5,12 +5,18 @@
 
 # local specific environment
 LOCAL_ROOT=${LOCAL_ROOT}
+# DB connection params
+DB_HOST=${CFG_DB_HOST}
+DB_NAME=${CFG_DB_NAME}
+DB_USER=${CFG_DB_USER}
+DB_PASS=${CFG_DB_PASS}
+
 
 ##
 #   Drop database.
 ##
-mysqladmin -f -u"${CFG_DB_USER}" -p"${CFG_DB_PASS}" -h"${CFG_DB_HOST}" drop "${CFG_DB_NAME}"
-mysqladmin -f -u"${CFG_DB_USER}" -p"${CFG_DB_PASS}" -h"${CFG_DB_HOST}" create "${CFG_DB_NAME}"
+mysqladmin -f -u"$DB_USER" -p"$DB_PASS" -h"$DB_HOST" drop "$DB_NAME"
+mysqladmin -f -u"$DB_USER" -p"$DB_PASS" -h"$DB_HOST" create "$DB_NAME"
 
 
 ##
@@ -54,7 +60,12 @@ php $LOCAL_ROOT/work/htdocs/install.php -- \
 
 
 ##
-#   Setup filesystem permissions
+echo "Post installation setup for database '$DB_NAME'."
+##
+mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER --password=$DB_PASS -e "source $LOCAL_ROOT/work/bin/deploy/post_install.sql"
+
+##
+echo "Setup filesystem permissions."
 ##
 chmod -R go-w $LOCAL_ROOT/work/htdocs/app/etc
 
