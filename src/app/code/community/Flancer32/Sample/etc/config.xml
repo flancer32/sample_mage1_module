@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- http://nwdthemes.com/2014/09/25/adminhtml-xml-details/ -->
+<config>
+    <modules>
+        <Flancer32_Sample>
+            <version>0.1.0</version>
+        </Flancer32_Sample>
+    </modules>
+</config>

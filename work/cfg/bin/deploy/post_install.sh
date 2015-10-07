@@ -17,6 +17,13 @@ mysqladmin -f -u"${CFG_DB_USER}" -p"${CFG_DB_PASS}" -h"${CFG_DB_HOST}" create "$
 #   Re-install database.
 ##
 
+# remove 'local.xml' to prevent installation failure
+if [ -f "$LOCAL_ROOT/work/htdocs/app/etc/local.xml" ]
+then
+    rm $LOCAL_ROOT/work/htdocs/app/etc/local.xml
+fi
+
+
 # Full list of the available options:
 # http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line
 
@@ -49,7 +56,7 @@ php $LOCAL_ROOT/work/htdocs/install.php -- \
 ##
 #   Setup filesystem permissions
 ##
-chmod -R a-w $LOCAL_ROOT/work/htdocs/app/etc
+chmod -R go-w $LOCAL_ROOT/work/htdocs/app/etc
 
 ##
 echo "Post installation setup is done."
