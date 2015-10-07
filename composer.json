@@ -13,5 +13,17 @@
   "require": {
     "php": ">=5.3",
     "flancer32/sample_magelib_demo": "dev-master"
+  },
+  "extra": {
+    "map": [
+      [
+        "src/app/code/community/Flancer32/Sample",
+        "app/code/community/Flancer32/Sample"
+      ],
+      [
+        "src/app/etc/modules/Flancer32_Sample.xml",
+        "app/etc/modules/Flancer32_Sample.xml"
+      ]
+    ]
   }
 }

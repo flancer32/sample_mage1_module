@@ -6,6 +6,8 @@ Stub for Magento 1 module with development environment.
 
 ## Magento 1 Module Links
 
+* [Cotya/magento-composer-installer](https://github.com/Cotya/magento-composer-installer)
+* [Adding Composer's autoloading ability to Magento](https://github.com/Cotya/magento-composer-installer/blob/3.0/doc/Autoloading.md)
 * [Run Magento Installer from Command Line](http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line)
 
 
