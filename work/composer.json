@@ -11,10 +11,11 @@
     }
   ],
   "require": {
+    "php": ">=5.3",
     "magento-hackathon/magento-composer-installer": "*",
     "magento-hackathon/composer-command-integrator": "1.0",
     "praxigento/composer_plugin_templates": "^1.0",
-    "magento/core": "~1.9",
+    "magento/core": "1.9.2.1",
     "flancer32/sample_magelib_demo": "dev-master",
     "flancer32/sample_mage1_module": "dev-master"
   },
@@ -27,6 +28,10 @@
   },
   "minimum-stability": "dev",
   "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packages.firegento.com"
+    },
     {
       "type": "vcs",
       "url": "https://github.com/flancer32/sample_magelib_demo"
