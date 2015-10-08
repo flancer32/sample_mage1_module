@@ -6,4 +6,31 @@
             <version>0.1.0</version>
         </Flancer32_Sample>
     </modules>
+    <global>
+        <models>
+            <fl32_sample_model>
+                <class>Flancer32_Sample_Model_Own</class>
+                <resourceModel>fl32_sample_resource</resourceModel>
+            </fl32_sample_model>
+            <fl32_sample_resource>
+                <class>Flancer32_Sample_Resource_Own</class>
+                <entities>
+                    <!-- see \Flancer32\Lib\Entity\Bonus\Type -->
+                    <bonus_type>
+                        <table>fl32_sample_bonus_type</table>
+                    </bonus_type>
+                </entities>
+            </fl32_sample_resource>
+        </models>
+        <resources>
+            <fl32_sample_setup>
+                <setup>
+                    <module>Flancer32_Sample</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </fl32_sample_setup>
+        </resources>
+    </global>
 </config>
