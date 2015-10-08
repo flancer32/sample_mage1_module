@@ -90,7 +90,7 @@ Documentation folder (Markdown files and images).
 
 
 
-## Development environment
+## Deployed development environment
 
 
 
