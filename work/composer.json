@@ -49,6 +49,7 @@
     "magento-force": true,
     "magento-deploystrategy": "copy",
     "magento-deploystrategy-overwrite": {
+      "flancer32/sample_magelib_demo": "symlink",
       "flancer32/sample_mage1_module": "symlink"
     },
     "auto-append-gitignore": false,
