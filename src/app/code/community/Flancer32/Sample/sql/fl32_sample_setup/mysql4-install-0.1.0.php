@@ -7,35 +7,34 @@ use Flancer32_Sample_Config as Cfg;
 use Varien_Db_Adapter_Interface as Db;
 use Varien_Db_Ddl_Table as Ddl;
 
-/** @var $setup Mage_Core_Model_Resource_Setup */
-$setup = null;
+/** @var $installer Mage_Core_Model_Resource_Setup */
+$installer = null;
 if(get_class($this) == 'Mage_Core_Model_Resource_Setup') {
     /** Pre setup Mage routines in application mode. */
-    $setup = $this;
+    $installer = $this;
 } else {
     /** Pre setup Mage routines in PHPUnit mode. */
-    $setup = Mage::getSingleton('core/resource_setup', Cfg::CFG_MOD_SETUP);
+    $installer = Mage::getSingleton('core/resource_setup', Cfg::CFG_MOD_SETUP);
 }
 
 /**
  * Start module installation.
  */
 /** @var $conn Varien_Db_Adapter_Pdo_Mysql */
-$conn = $setup->getConnection();
-$conn->beginTransaction();
+$conn = $installer->getConnection();
 
 /**
  * Prepare working variables.
  */
 
 /** Pre setup Mage routines. */
-$setup->startSetup();
+$installer->startSetup();
 $optId = array( 'identity' => true, 'primary' => true, 'nullable' => false, 'unsigned' => true );
 
 /**
  * Table names.
  */
-$tblBonusType = $setup->getTable(BonusType::NAME);
+$tblBonusType = $installer->getTable(BonusType::NAME);
 
 
 /** ********************************
@@ -52,6 +51,4 @@ $tbl->setComment('Types of the available bonuses.');
 $conn->createTable($tbl);
 
 /** Post setup Mage routines. */
-$setup->endSetup();
-
-$conn->rollback();
+$installer->endSetup();

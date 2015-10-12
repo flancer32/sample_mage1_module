@@ -4,7 +4,7 @@ use Flancer32\Lib\Entity\Bonus\Type as BonusType;
 /**
  * User: Alex Gusev <alex@flancer64.com>
  */
-class Flancer32_Sample_LibCall {
+class Flancer32_Sample_Lib_Crud {
 
     public function doCall() {
         /** @var  $lib Flancer32\Lib\Service\Customer\Call */
