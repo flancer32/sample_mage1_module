@@ -1,10 +1,9 @@
 <?php
 use Flancer32_Sample_Config as Cfg;
 
-/**
- * User: Alex Gusev <alex@flancer64.com>
- */
-include_once('../../phpunit_bootstrap.php');
+
+/** Include phpunit_bootstrap to load Mage.php. */
+include_once('../../../phpunit_bootstrap.php');
 
 class Install_0_1_0_DvlpTest extends PHPUnit_Framework_TestCase {
 
