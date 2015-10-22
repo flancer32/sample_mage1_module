@@ -1,9 +1,5 @@
 <?php
 /**
- * Copyright (c) 2015, Praxigento
- * All rights reserved.
- */
-/**
  * Traverse up and lookup for the './mage/' folder to add to 'include_path'.
  */
 if(!class_exists('Mage')) {
