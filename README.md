@@ -26,6 +26,7 @@ Clone repo from github:
     {
       "vars": {
         "LOCAL_ROOT": "/home/magento/instance/sample_mage2_module",
+        "DEPLOYMENT_TYPE": "travis|manual",
         "CFG_ADMIN_FIRSTNAME": "Store",
         "CFG_ADMIN_LASTNAME": "Admin",
         "CFG_ADMIN_EMAIL": "admin@store.com",
@@ -36,7 +37,7 @@ Clone repo from github:
         "CFG_DB_HOST": "localhost",
         "CFG_DB_NAME": "magento2",
         "CFG_DB_USER": "magento2",
-        "CFG_DB_PASS": "JvPESKVSjXvZDrGk2gBe",
+        "CFG_DB_PASS": "JvPESKVSjXvZDrGk2gBe or use 'skip_password'",
         "CFG_LANGUAGE": "en_US",
         "CFG_CURRENCY": "USD",
         "CFG_TIMEZONE": "UTC",

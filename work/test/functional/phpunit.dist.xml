@@ -9,7 +9,7 @@
          stopOnFailure="false"
          syntaxCheck="true"
          bootstrap="./phpunit_bootstrap.php">
-    <testsuite name="Functional Tests for Generic MOBI application (M1)">
+    <testsuite name="Sample Application Functional Tests">
         <directory suffix="_Test.php">../../vendor/flancer32/sample_mage1_module/test/functional</directory>
         <directory suffix="_Test.php">../../vendor/flancer32/sample_magelib_demo/test/functional</directory>
     </testsuite>
