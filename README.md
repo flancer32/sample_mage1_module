@@ -2,7 +2,7 @@
 
 Stub for Magento 1 module with development environment.
 
-
+[![Build Status](https://travis-ci.org/flancer32/sample_mage1_module.svg)](https://travis-ci.org/flancer32/sample_mage1_module/)
 
 ## Magento 1 Module Links
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="true"
+         bootstrap="./phpunit_bootstrap.php">
+    <testsuite name="Generic MOBI Application Unit Tests">
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_app_generic_mage1/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_accounting/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_bonus_base/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_bonus_retail/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_core/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_dashboard/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_downline/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_mlm_id/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_pv/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_wallet/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_accounting/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_bonus_base/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_bonus_retail/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_core/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_dashboard/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_downline/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_mlm_id/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_pv/test/unit</directory>
+        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_wallet/test/unit</directory>
+    </testsuite>
+    <logging>
+        <!--<log type="coverage-html" target="./tmp/report" lowUpperBound="35" highLowerBound="70"/>-->
+        <!--<log type="coverage-clover" target="./tmp/coverage.xml"/>-->
+        <!--<log type="coverage-php" target="./tmp/coverage.serialized"/>-->
+        <!--<log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>-->
+        <!--<log type="json" target="./tmp/logfile.json"/>-->
+        <!--<log type="tap" target="./tmp/logfile.tap"/>-->
+        <!--<log type="junit" target="./tmp/logfile.xml" logIncompleteSkipped="false"/>-->
+        <!--<log type="testdox-html" target="./tmp/testdox.html"/>-->
+        <!--<log type="testdox-text" target="./tmp/testdox.txt"/>-->
+    </logging>
+</phpunit>
