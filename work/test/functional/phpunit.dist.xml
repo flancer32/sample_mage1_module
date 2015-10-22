@@ -10,25 +10,8 @@
          syntaxCheck="true"
          bootstrap="./phpunit_bootstrap.php">
     <testsuite name="Functional Tests for Generic MOBI application (M1)">
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_app_generic_mage1/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_accounting/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_bonus_base/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_bonus_retail/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_core/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_dashboard/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_downline/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_mlm_id/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_pv/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_common_wallet/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_accounting/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_bonus_base/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_bonus_retail/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_core/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_dashboard/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_downline/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_mlm_id/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_pv/test/functional</directory>
-        <directory suffix="_Test.php">../../vendor/praxigento/mobi_mod_mage1_wallet/test/functional</directory>
+        <directory suffix="_Test.php">../../vendor/flancer32/sample_mage1_module/test/functional</directory>
+        <directory suffix="_Test.php">../../vendor/flancer32/sample_magelib_demo/test/functional</directory>
     </testsuite>
     <logging>
         <!--<log type="coverage-html" target="./tmp/report" lowUpperBound="35" highLowerBound="70"/>-->
