@@ -26,6 +26,8 @@ Clone repo from github:
     {
       "vars": {
         "LOCAL_ROOT": "/home/magento/instance/sample_mage2_module",
+        "LOCAL_OWNER": "magento",
+        "LOCAL_GROUP": "www-data",
         "DEPLOYMENT_TYPE": "travis|manual",
         "CFG_ADMIN_FIRSTNAME": "Store",
         "CFG_ADMIN_LASTNAME": "Admin",

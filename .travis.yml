@@ -1,29 +1,29 @@
+sudo: false # use container-based environment on Travis
 language: php
 php:
   - 5.6
   - hhvm
-  - '7' # or '7.0'
-
+  - '7'
 
 before_install:
-  - mysql -e "create database IF NOT EXISTS mage1;"
-  - cd work
-  - pwd
-  - whoami
-  - cp templates.json.travis templates.json
-  - composer self-update
-  - composer install
-  - sh ./bin/deploy/post_install.sh
-
+#  - mysql -e "create database IF NOT EXISTS mage1;" # create
+  - cd work # go to root folder for development environment
+  - pwd # control current path ('LOCAL_ROOT' in templates.json)
+  - whoami  # control current user ('LOCAL_OWNER' in templates.json)
+  - cp templates.json.travis templates.json # create configuration for Travis from template
+#  - composer self-update  # update composer
+  - composer install  # install project using PHP Composer
+  - cat ./bin/deploy/post_install.sh  # control parameters in the installation script
+  - cat ./bin/deploy/post_install.sql # control parameters in the SQL script
+  - sh ./bin/deploy/post_install.sh # create initial DB, run SQL script, setup permissions, ...
 
 script:
-  - phpunit --configuration ./test/unit/phpunit.dist.xml
-  - phpunit --configuration ./test/functional/phpunit.dist.xml
-
+  - phpunit --configuration ./test/unit/phpunit.dist.xml  # run project's unit test
+  - phpunit --configuration ./test/functional/phpunit.dist.xml # run project's functional test
 
 notifications:
   email:
     recipients:
       - alex@flancer64.com
-    on_success: always # [always|never|change], default: change
-    on_failure: always # [always|never|change], default: change
+    on_success: change # [always|never|change], default: change
+    on_failure: change # [always|never|change], default: change
