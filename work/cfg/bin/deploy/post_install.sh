@@ -35,7 +35,7 @@ echo "Create ./var/log folder."
 ##
 mkdir -p $MAGE_ROOT/var/log
 
-if [ "$DEPLOYMENT_TYPE" = "travis" ]; then
+if [ "$DEPLOYMENT_TYPE" = "travissss" ]; then
     echo "Skip ownership for TRAVIS CI."
 else
     ##
@@ -48,7 +48,7 @@ fi
 
 
 
-if [ "$DEPLOYMENT_TYPE" = "travis" ]; then
+if [ "$DEPLOYMENT_TYPE" = "travissss" ]; then
     echo "Skip DB '$DB_NAME' drop/create for TRAVIS CI."
 else
     ##
