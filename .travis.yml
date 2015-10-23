@@ -11,7 +11,8 @@ before_install:
   - pwd # control current path ('LOCAL_ROOT' in templates.json)
   - whoami  # control current user ('LOCAL_OWNER' in templates.json)
   - cp templates.json.travis templates.json # create configuration for Travis from template
-#  - composer self-update  # update composer
+  - composer self-update  # update composer to prevent error Class 'Composer\Installer\PackageEvents' not found in
+#   .../work/vendor/aydin-hassan/magento-core-composer-installer/src/CoreManager.php on line 109
   - composer install  # install project using PHP Composer
   - cat ./bin/deploy/post_install.sh  # control parameters in the installation script
   - cat ./bin/deploy/post_install.sql # control parameters in the SQL script

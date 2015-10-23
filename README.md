@@ -4,12 +4,9 @@ Stub for Magento 1 module with development environment.
 
 [![Build Status](https://travis-ci.org/flancer32/sample_mage1_module.svg)](https://travis-ci.org/flancer32/sample_mage1_module/)
 
-## Magento 1 Module Links
+## Magento 2 Sample Module
 
-* [Cotya/magento-composer-installer](https://github.com/Cotya/magento-composer-installer)
-* [Adding Composer's autoloading ability to Magento](https://github.com/Cotya/magento-composer-installer/blob/3.0/doc/Autoloading.md)
-* [Run Magento Installer from Command Line](http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line)
-
+[flancer32/sample_mage2_module](https://github.com/flancer32/sample_mage2_module)
 
 
 ## Development Installation
