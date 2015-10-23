@@ -6,7 +6,6 @@ php:
   - '7'
 
 before_install:
-#  - mysql -e "create database IF NOT EXISTS mage1;" # create
   - cd work # go to root folder for development environment
   - pwd # control current path ('LOCAL_ROOT' in templates.json)
   - whoami  # control current user ('LOCAL_OWNER' in templates.json)

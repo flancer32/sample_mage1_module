@@ -35,8 +35,8 @@ echo "Create ./var/log folder."
 ##
 mkdir -p $MAGE_ROOT/var/log
 
-if [ "$DEPLOYMENT_TYPE" = "travissss" ]; then
-    echo "Skip ownership for TRAVIS CI."
+if [ "$DEPLOYMENT_TYPE" = "travis" ]; then
+    echo "Skip permissions setup for TRAVIS CI."
 else
     ##
     echo "Change rights to folders and files."
@@ -48,15 +48,11 @@ fi
 
 
 
-if [ "$DEPLOYMENT_TYPE" = "travissss" ]; then
-    echo "Skip DB '$DB_NAME' drop/create for TRAVIS CI."
-else
-    ##
-    echo "Drop database '$DB_NAME'."
-    ##
-    mysqladmin -f -u"$DB_USER" $MYSQL_PASS -h"$DB_HOST" drop "$DB_NAME"
-    mysqladmin -f -u"$DB_USER" $MYSQL_PASS -h"$DB_HOST" create "$DB_NAME"
-fi
+##
+echo "Drop database '$DB_NAME'."
+##
+mysqladmin -f -u"$DB_USER" $MYSQL_PASS -h"$DB_HOST" drop if exists "$DB_NAME"
+mysqladmin -f -u"$DB_USER" $MYSQL_PASS -h"$DB_HOST" create "$DB_NAME"
 
 
 
