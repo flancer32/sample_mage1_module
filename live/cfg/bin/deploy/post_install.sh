@@ -31,7 +31,7 @@ find $MAGE_ROOT -type d -exec chmod 770 {} \;
 find $MAGE_ROOT -type f -exec chmod 660 {} \;
 
 # Check 'local.xml' to prevent repeated installation
-FILE_LOCAL_XML=$MAGE_ROOT/htdocs/app/etc/local.xml
+FILE_LOCAL_XML=$MAGE_ROOT/app/etc/local.xml
 if [ -f "$FILE_LOCAL_XML" ]
 then
         echo "There is '$FILE_LOCAL_XML' file. Do nothing."
@@ -44,7 +44,7 @@ else
     # Full list of the available options:
     # http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line
 
-    php $MAGE_ROOT/htdocs/install.php -- \
+    php $MAGE_ROOT/install.php -- \
     --license_agreement_accepted "yes" \
     --locale "${CFG_LOCALE}" \
     --timezone "${CFG_TIMEZONE}" \
@@ -72,12 +72,12 @@ else
     ##
     echo "Post installation setup for database '$DB_NAME'."
     ##
-    mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER --password=$DB_PASS -e "source $MAGE_ROOT/bin/deploy/post_install.sql"
+    mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER --password=$DB_PASS -e "source $LOCAL_ROOT/bin/deploy/post_install.sql"
 
     ##
     echo "Setup additional filesystem permissions."
     ##
-    chmod -R go-w $MAGE_ROOT/htdocs/app/etc
+    chmod -R go-w $MAGE_ROOT/app/etc
 
 fi
 
