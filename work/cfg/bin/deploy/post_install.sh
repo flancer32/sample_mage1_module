@@ -1,6 +1,7 @@
 #!/bin/sh
 ##
-#   Setup Magento instance after update with Composer.
+#   Setup Magento instance after completion of the installation with PHP Composer.
+#   (all placeholders ${...} should be replaced by real values from ./live/template.json file)
 ##
 
 # type of the deployment (skip some steps when app is deployed in TRAVIS CI, $DEPLOYMENT_TYPE='travis')

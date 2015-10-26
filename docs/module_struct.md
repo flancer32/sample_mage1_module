@@ -67,9 +67,7 @@ Template to compose SQL script with custom configuration to be applied after the
 [Source](../work/cfg/templates.json)
  
 Configuration for templates processing (source templates paths, targets paths, composer events, etc).
- 
 
- 
  
  
 ### ./work/templates.json.init
@@ -77,7 +75,57 @@ Configuration for templates processing (source templates paths, targets paths, c
 [Source](../work/templates.json.init)
  
 Stub for templates placeholders values.
+
+
+
+
+## Production environment
+
+
+### ./live
+
+Contains files to deploy production environment for application.
+
+
+### ./live/composer.json
+
+[Source](../live/composer.json)
+
+Descriptor for Magento application deployment. This app will include our sample modules.
+
+
+### ./live/cfg/bin/deploy/post_install.sh
+
+[Source](../live/cfg/bin/deploy/post_install.sh)
+
+Template to compose shell script to create initial Magento DB, run Magento installer to populate DB with tables
+and perform other post installation setup.
  
+ 
+ 
+### ./live/cfg/bin/deploy/post_install.sql
+
+[Source](../live/cfg/bin/deploy/post_install.sql)
+ 
+Template to compose SQL script with custom configuration to be applied after the Magento DB will be installed.
+ 
+ 
+ 
+### ./live/cfg/templates.json
+
+[Source](../live/cfg/templates.json)
+ 
+Configuration for templates processing (source templates paths, targets paths, composer events, etc).
+
+ 
+ 
+### ./live/templates.json.init
+
+[Source](../live/templates.json.init)
+ 
+Stub for templates placeholders values.
+
+
 
 
 ## Documentation
