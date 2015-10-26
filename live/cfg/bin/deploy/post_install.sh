@@ -25,7 +25,7 @@ DB_PASS=${CFG_DB_PASS}
 FILE_LOCAL_XML=$MAGE_ROOT/app/etc/local.xml
 if [ -f "$FILE_LOCAL_XML" ]
 then
-        echo "There is '$FILE_LOCAL_XML' file. Do nothing."
+    echo "There is '$FILE_LOCAL_XML' file. Do nothing."
 else
     echo "There is no '$FILE_LOCAL_XML' file."
 

@@ -27,7 +27,7 @@ if [ "$DB_PASS" = "skip_password" ]; then
     MAGE_DBPASS=""
 else
     MYSQL_PASS="--password=$DB_PASS"
-    MAGE_DBPASS="--db_pass ""${CFG_DB_PASS}"""
+    MAGE_DBPASS="--db_pass ""$DB_PASS"""
 fi
 
 
