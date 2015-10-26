@@ -8,7 +8,6 @@ php:
 before_install:
   - cd work # go to root folder for development environment
   - pwd # control current path ('LOCAL_ROOT' in templates.json)
-  - whoami  # control current user ('LOCAL_OWNER' in templates.json)
   - cp templates.json.travis templates.json # create configuration for Travis from template
   - composer self-update  # update composer to prevent error Class 'Composer\Installer\PackageEvents' not found in
 #   .../work/vendor/aydin-hassan/magento-core-composer-installer/src/CoreManager.php on line 109
@@ -18,8 +17,8 @@ before_install:
   - sh ./bin/deploy/post_install.sh # create initial DB, run SQL script, setup permissions, ...
 
 script:
-  - phpunit --configuration ./test/unit/phpunit.dist.xml  # run project's unit test
-  - phpunit --configuration ./test/functional/phpunit.dist.xml # run project's functional test
+  - phpunit --configuration ./test/unit/phpunit.dist.xml  # run project's unit tests
+  - phpunit --configuration ./test/functional/phpunit.dist.xml # run project's functional tests
 
 notifications:
   email:
