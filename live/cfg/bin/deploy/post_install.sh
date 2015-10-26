@@ -21,29 +21,27 @@ DB_USER=${CFG_DB_USER}
 DB_PASS=${CFG_DB_PASS}
 
 
-
-##
-echo "Change rights to folders and files."
-##
-mkdir -p $MAGE_ROOT/var/log
-chown -R $LOCAL_OWNER:$LOCAL_GROUP $MAGE_ROOT
-find $MAGE_ROOT -type d -exec chmod 770 {} \;
-find $MAGE_ROOT -type f -exec chmod 660 {} \;
-
 # Check 'local.xml' to prevent repeated installation
 FILE_LOCAL_XML=$MAGE_ROOT/app/etc/local.xml
 if [ -f "$FILE_LOCAL_XML" ]
 then
         echo "There is '$FILE_LOCAL_XML' file. Do nothing."
-
 else
-
     echo "There is no '$FILE_LOCAL_XML' file."
-    echo "launch Magento installation using database '$DB_NAME'."
 
+
+    ##
+    echo "Change rights to folders and files."
+    ##
+    mkdir -p $MAGE_ROOT/var/log
+    chown -R $LOCAL_OWNER:$LOCAL_GROUP $MAGE_ROOT
+    find $MAGE_ROOT -type d -exec chmod 770 {} \;
+    find $MAGE_ROOT -type f -exec chmod 660 {} \;
+
+
+    echo "launch Magento installation using database '$DB_NAME'."
     # Full list of the available options:
     # http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line
-
     php $MAGE_ROOT/install.php -- \
     --license_agreement_accepted "yes" \
     --locale "${CFG_LOCALE}" \
