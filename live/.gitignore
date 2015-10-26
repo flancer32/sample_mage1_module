@@ -1,0 +1,6 @@
+/bin/
+/htdocs/
+/composer.lock
+/persistent/
+/vendor/
+/templates.json
