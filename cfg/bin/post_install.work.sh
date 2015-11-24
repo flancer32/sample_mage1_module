@@ -1,10 +1,12 @@
 #!/bin/sh
 ##
 #   Setup Magento instance after completion of the installation with PHP Composer.
-#   (all placeholders ${...} should be replaced by real values from ./live/template.json file)
+#
+#   (all placeholders ${...} should be replaced by real values from 'templates.vars.[live|work].json' file
+#    see node 'extra/praxigento_templates_config' in project's 'composer.json')
 ##
 
-# type of the deployment (skip some steps when app is deployed in TRAVIS CI, $DEPLOYMENT_TYPE='travis')
+# type of the deployment (skip some steps when app is deployed in TRAVIS CI, $DEPLOYMENT_TYPE='test')
 DEPLOYMENT_TYPE=${DEPLOYMENT_TYPE}
 # local specific environment
 LOCAL_ROOT=${LOCAL_ROOT}
@@ -36,7 +38,7 @@ echo "Create ./var/log folder."
 ##
 mkdir -p $MAGE_ROOT/var/log
 
-if [ "$DEPLOYMENT_TYPE" = "travis" ]; then
+if [ "$DEPLOYMENT_TYPE" = "test" ]; then
     echo "Skip permissions setup for TRAVIS CI."
 else
     ##
@@ -75,11 +77,6 @@ php $MAGE_ROOT/install.php -- \
 --locale "${CFG_LOCALE}" \
 --timezone "${CFG_TIMEZONE}" \
 --default_currency "${CFG_DEFAULT_CURRENCY}" \
---db_host "${CFG_DB_HOST}" \
---db_name "${CFG_DB_NAME}" \
---db_user "${CFG_DB_USER}" \
-$MAGE_DBPASS \
---db_prefix "${CFG_DB_PREFIX}" \
 --session_save "${CFG_SESSION_SAVE}" \
 --admin_frontname "${CFG_ADMIN_FRONTNAME}" \
 --url "${CFG_URL}" \
@@ -94,14 +91,19 @@ $MAGE_DBPASS \
 --admin_email "${CFG_ADMIN_EMAIL}" \
 --admin_username "${CFG_ADMIN_USERNAME}" \
 --admin_password "${CFG_ADMIN_PASSWORD}" \
-
+--db_host "${CFG_DB_HOST}" \
+--db_name "${CFG_DB_NAME}" \
+--db_prefix "${CFG_DB_PREFIX}" \
+--db_user "${CFG_DB_USER}" \
+$MAGE_DBPASS \
+# 'MAGE_DBPASS' should be placed on the last position to prevent failures if this var is empty.
 
 
 ##
 echo "Post installation setup for database '$DB_NAME'."
 ##
 #
-mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER $MYSQL_PASS -e "source $LOCAL_ROOT/bin/deploy/post_install.sql"
+mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER $MYSQL_PASS -e "source $LOCAL_ROOT/bin//setup.sql"
 
 
 
