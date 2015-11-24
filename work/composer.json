@@ -24,10 +24,6 @@
   },
   "minimum-stability": "dev",
   "repositories": {
-    "firegento": {
-      "type": "composer",
-      "url": "http://packages.firegento.com"
-    },
     "flancer32/sample_magelib_demo": {
       "type": "vcs",
       "url": "https://github.com/flancer32/sample_magelib_demo"
