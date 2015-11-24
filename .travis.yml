@@ -18,7 +18,7 @@ before_install:
 
 script:
   - phpunit --configuration ./test/unit/phpunit.dist.xml  # run project's unit tests
-  - phpunit --configuration ./test/functional/phpunit.dist.xml # run project's functional tests
+  - phpunit --configuration ./test/integration/phpunit.dist.xml # run project's functional tests
 
 notifications:
   email:
