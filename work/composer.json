@@ -15,7 +15,7 @@
     "magento-hackathon/magento-composer-installer": "3.0.5",
     "aydin-hassan/magento-core-composer-installer": "*",
     "praxigento/composer_plugin_templates": "^1.0",
-    "magento/core": "1.9.2.1",
+    "magento/core": "^1.9",
     "flancer32/sample_mage1_module": "dev-master"
   },
   "require-dev": {
@@ -40,7 +40,8 @@
     ],
     "post-install-cmd": [
       "# To complete installation launch 'sh ./bin/post_install.sh'",
-      "# To clean up Magento files launch 'sh ./bin/mage_clean.sh'"
+      "# To clean up Magento files launch 'sh ./bin/mage_clean.sh'",
+      "# To start integration tests launch './vendor/bin/phpunit -c ./test/integration/phpunit.dist.xml'"
     ]
   },
   "extra": {

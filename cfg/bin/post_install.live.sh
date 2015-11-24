@@ -1,7 +1,9 @@
 #!/bin/sh
 ##
 #   Setup Magento instance after completion of the installation with PHP Composer.
-#   (all placeholders ${...} should be replaced by real values from ./live/template.json file)
+#
+#   (all placeholders ${...} should be replaced by real values from 'templates.vars.[live|work].json' file
+#    see node 'extra/praxigento_templates_config' in project's 'composer.json')
 ##
 
 # local specific environment
@@ -70,7 +72,7 @@ else
     ##
     echo "Post installation setup for database '$DB_NAME'."
     ##
-    mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER --password=$DB_PASS -e "source $LOCAL_ROOT/bin/deploy/post_install.sql"
+    mysql --database=$DB_NAME --host=$DB_HOST --user=$DB_USER --password=$DB_PASS -e "source $LOCAL_ROOT/bin/setup.sql"
 
     ##
     echo "Setup additional filesystem permissions."

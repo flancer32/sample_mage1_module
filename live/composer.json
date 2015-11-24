@@ -15,15 +15,11 @@
     "magento-hackathon/magento-composer-installer": "3.0.5",
     "aydin-hassan/magento-core-composer-installer": "*",
     "praxigento/composer_plugin_templates": "^1.0",
-    "magento/core": "1.9.2.1",
+    "magento/core": "1.9.2.2-patch1",
     "flancer32/sample_mage1_module": "dev-master"
   },
   "minimum-stability": "dev",
   "repositories": {
-    "firegento": {
-      "type": "composer",
-      "url": "http://packages.firegento.com"
-    },
     "flancer32/sample_magelib_demo": {
       "type": "vcs",
       "url": "https://github.com/flancer32/sample_magelib_demo"
@@ -39,7 +35,8 @@
       "mkdir -p htdocs"
     ],
     "post-install-cmd": [
-      "# To complete installation launch 'sh ./bin/deploy/post_install.sh'"
+      "# To complete installation launch 'sh ./bin/post_install.sh'",
+      "# To clean up Magento files launch 'sh ./bin/mage_clean.sh'"
     ]
   },
   "extra": {
@@ -48,8 +45,8 @@
     "magento-deploystrategy": "copy",
     "auto-append-gitignore": false,
     "praxigento_templates_config": [
-      "./templates.json",
-      "./cfg/templates.json"
+      "./templates.cfg.json",
+      "../templates.vars.live.json"
     ]
   }
 }
