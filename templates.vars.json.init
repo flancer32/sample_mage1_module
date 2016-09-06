@@ -1,7 +1,6 @@
 {
   "vars": {
     "LOCAL_ROOT": "/home/magento/instance/sample_mage1_module/work",
-    "DEPLOYMENT_TYPE": "live|pilot|test|development",
     "LOCAL_OWNER": "magento",
     "LOCAL_GROUP": "www-data",
     "CFG_LOCALE": "en_US",

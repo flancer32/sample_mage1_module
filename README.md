@@ -4,9 +4,7 @@ Stub for Magento 1 module with development environment.
 
 [![Build Status](https://travis-ci.org/flancer32/sample_mage1_module.svg)](https://travis-ci.org/flancer32/sample_mage1_module/)
 
-## Magento 2 Sample Module
-
-[flancer32/sample_mage2_module](https://github.com/flancer32/sample_mage2_module)
+Magento 2 sample: [flancer32/sample_mage2_module](https://github.com/flancer32/sample_mage2_module)
 
 
 ## Development Installation
@@ -14,15 +12,15 @@ Stub for Magento 1 module with development environment.
 Clone repo from github:
 
     $ git clone git@github.com:flancer32/sample_mage1_module.git
-    $ cd sample_mage1_module/work/
+    $ cd sample_mage1_module
 
-... configure development instance (DB parameters, access parameters, [etc](http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line)):
+Create configuration for development instance (DB parameters, access parameters, [etc](http://fbrnc.net/blog/2012/03/run-magento-installer-from-command-line)):
 
-    $ cp templates.json.init templates.json
-    $ nano templates.json    
+    $ cp templates.vars.json.init templates.vars.work.json
+    $ nano templates.vars.work.json
     {
       "vars": {
-        "LOCAL_ROOT": "/home/magento/instance/sample_mage2_module",
+        "LOCAL_ROOT": "/home/magento/instance/sample_mage2_module/work",
         "LOCAL_OWNER": "magento",
         "LOCAL_GROUP": "www-data",
         "DEPLOYMENT_TYPE": "travis|manual",
@@ -47,10 +45,15 @@ Clone repo from github:
         "CFG_SESSION_SAVE": "db"
       }
     }
+
+Go to root folder for the development installation (`./work/`) and install composer application:
+
+    $ cd ./work/
+    $ composer install
     
+   
 ... then run composer, link modules to `./work/htdocs/` and install Magento DB:  
     
-    $ composer install
     $ sh  ./bin/deploy/post_install.sh
 
 
